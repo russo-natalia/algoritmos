@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    Qual time grande de São Paulo você torce?
+    <input type="text" id="input_time">
+    <button onclick="falarTime()">
+        Fale sobre esse time
+    </button>
+    <p id="p_msg"></p>
+    
+</body>
+</html>
+
+
+<script>
+    function falarTime() {
+        var time = input_time.value;
+
+        if (time == "Corinthians") {
+            p_msg.innerHTML = `<span style="color: white; background-color: black;">Salve o Corinthians</span>`;
+        }
+        else if (time == "Palmeiras") {
+            p_msg.innerHTML = `<span style="color: white; background-color: green;">Salve o alviverde imponente</span>`;
+        }
+        else if (time == "Santos")  {
+            p_msg.innerHTML = `<span style="color: black; background-color:  white;">Agora quem dá a bola é o Santos</span>`;
+        }
+        else if (time == "São Paulo") {
+            p_msg.innerHTML = `<span style="color: red; background-color: black;">Salve o Tricolor paulista</span>`;
+        }
+    }
+</script>

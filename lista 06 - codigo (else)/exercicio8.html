@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    Informe a quantidade de homens no elevador:
+    <input type="number" id="input_homens">
+    Informe a quantidade de mulheres no elevador:
+    <input type="number" id="input_mulheres">
+    <button onclick="elevador()">
+        Ligar Elevador 
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    function elevador() {
+        var homens = Number(input_homens.value);
+        var mulheres = Number(input_mulheres.value);
+        var pesoMulher = mulheres * 70;
+        var pesoHomem = homens * 90;
+        var pesoTotal = pesoMulher + pesoHomem;
+
+        if (pesoTotal < 500) {
+            p_msg.innerHTML = `<span style="color:green">Elevador vai se mover, posi está com ${pesoTotal}kg.</span>`;
+        }
+        else {
+            var pesoPerder = pesoTotal - 500;
+            p_msg.innerHTML = `<span style="color:red">Alguém precisa sair. Precisa perder ${pesoPerder}kg para o elevador se mexer.</span>`;
+        }
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Mercado Bom Doce</h1>
+    Quantidade de chocolates comprados:
+    <input id="input_num_choc">
+    <br>
+    <button onclick="comprar()">
+        Compra
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    function comprar() {
+        var num_choc = Number(input_num_choc.value);
+        
+        if (num_choc > 12) {
+            var preco_choc = 2.50;
+        }
+        else {
+            var preco_choc = 3;
+        }
+
+        var valorCompra = preco_choc * num_choc;
+
+        p_msg.innerHTML = `O valor da sua compra foi de R$${valorCompra}`;
+    }
+</script>

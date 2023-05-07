@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04</title>
+</head>
+<body>
+    Idade: <input type="text" id="input_idade">
+    <button onclick="verificar()">Verificar Voto</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var idade = Number(input_idade.value)
+        //if = se
+        // em caso de os dois if são verdadeiros ele vai executar o último if (sobrescreveu)
+        //atribuição de valor: =; comparação de valores: ==
+        if (idade >= 16) {
+            div_mensagem.innerHTML = 'Você ja pode votar!'
+        }
+
+        if (idade < 16) {
+            div_mensagem.innerHTML = 'Você ainda não pode votar!'
+        }
+    }
+
+</script>

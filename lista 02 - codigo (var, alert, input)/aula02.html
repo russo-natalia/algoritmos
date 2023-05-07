@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02</title>
+</head>
+<body>
+    N1: <input id="input_n1"><br><br>
+    N2: <input id="input_n2"><br><br>
+    <button onclick="multiplicar()">
+        Multiplicar
+    </button>
+    <button onclick=somar()>
+        Somar
+    </button>
+    <button onclick="dividir()">
+        Dividir
+    </button>
+    <button onclick="subtrair()">
+        Subtrair
+    </button>
+</body>
+</html>
+
+<script>
+
+    // Quando colocamos .value o js interpreta como se fosse um texto, mesmo que a intenção seja um número, ele padroniza como texto. Logo quando for colocar em operações matemáticas ou PRECISE que ele seja número, devemos coloar Number(.value) para que o texto seja convertido para o seu correspondente numérico. Em operações como * / - ele automaticamente converte, porém o ideal é ter Number() mesmo assim, ja que outras linguagens não vão ter essa conversão automática.
+    function multiplicar() {
+        alert("Seu resultado é: " + (Number(input_n1.value) * Number(input_n2.value)))
+    };
+    //O simbolo de + não é apenas para soma, ele é um concatenador, ou seja devemos converter em número se não ele irá concatenar.
+    function somar() {
+        alert("O seu resultado é: "+ (Number(input_n1.value) + Number(input_n2.value)))
+    };
+    //sempre que tiver concatenação, colocar a operação em evidencia por meio de um (), como no exemplo abaixo.
+    function dividir() {
+        alert("Seu resultado é: " + (Number(input_n1.value) / Number(input_n2.value)))
+    };
+    function subtrair() {
+        alert("Seu resultado é: " + (Number(input_n1.value) - Number(input_n2.value)))
+    };
+    //ctrl + shift seta p baixo
+    //input*3
+
+</script>

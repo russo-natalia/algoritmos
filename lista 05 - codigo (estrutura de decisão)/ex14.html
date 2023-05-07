@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    Informe o nome do passageiro:
+    <input type="text" id="input_nome">
+    <br>
+    Informe a distância (em km) do local atual para o destino do passageiro:
+    <input type="text" id="input_distancia">
+    <br>
+    Informe a bandeira da corrida:
+    <input type="number" max="3" min="1" id="input_bandeira">
+    <br>
+    Informe o horário da corrida:
+    <input type="number" min="0" max="23" id="input_horario">
+    <button onclick="calcularCorrida()">
+        Calcular corrida
+    </button>
+    <p id="p_mensagem"></p>
+</body>
+</html>
+<script>
+    function calcularCorrida() {
+        var nome = input_nome.value;
+        var distancia = Number(input_distancia.value);
+        var bandeira = Number(input_bandeira.value);
+        var horario = Number(input_horario.value);
+
+        var valorCorrida = distancia * 1.25;
+
+
+        if (bandeira == 1) {
+            if (horario <= 6) {
+                var adicional = valorCorrida * 0.05;
+            };
+            
+            if (horario >= 7) {
+                var adicional = valorCorrida * 0.1;
+
+                if (horario >= 13) {
+                    var adicional = valorCorrida * 0.15;
+                };
+            };
+        };
+
+        if (bandeira == 2) {
+            if (horario <= 6) {
+                var adicional = valorCorrida * 0.1;
+            };
+            
+            if (horario >= 7) {
+                var adicional = valorCorrida * 0.2;
+
+                if (horario >= 13) {
+                    var adicional = valorCorrida * 0.3;
+                };
+            };
+        };
+
+        if (bandeira == 3) {
+            if (horario <= 6) {
+                var adicional = valorCorrida * 0.15;
+            };
+            
+            if (horario >= 7) {
+                var adicional = valorCorrida * 0.3;
+
+                if (horario >= 13) {
+                    var adicional = valorCorrida * 0.45;
+                };
+            };
+        };
+
+        var valorCorridaFinal = valorCorrida + adicional;
+
+        p_mensagem.innerHTML = `Olá <b>${nome}</b> sua corrida, será na bandeira <b>${bandeira}</b>, percorrerá <b>${distancia}</b>km e o total da corrida será de R$<b>${valorCorridaFinal}</b>`;
+
+
+    }
+</script>

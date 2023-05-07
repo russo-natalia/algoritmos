@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <p>Informe o sabor da pizza: </p>
+    <input id="input_sabor_pizza" type="text">
+    <br>
+    <p>Informe o preço da pizza: </p>
+    <input id="input_valor_pizza" type="number">
+    <br>
+    <p>Informe o número de pessoas que vão dividir o valor: </p>
+    <input id="input_num_pessoas" type="number">
+    <br><br>
+    <button onclick="pagamento()">Ver valor por amigo</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function pagamento() {
+        var valor_pizza = Number(input_valor_pizza.value);
+        var num_pessoas = Number(input_num_pessoas.value);
+        var sabor_pizza = input_sabor_pizza.value;
+
+        var valor_pizza_total = (valor_pizza * 10/100) + valor_pizza;
+        var valor_individual = valor_pizza_total / num_pessoas;
+        
+        div_mensagem.innerHTML = `Cada amigo vai colaborar com R$ ${valor_individual} na pizza de ${sabor_pizza}`;
+    }
+</script>

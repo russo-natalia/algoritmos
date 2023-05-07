@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <p>Número de voltas do carro: </p>
+    <input type="number" id="input_numero_voltas">
+    <button onclick="contar()">
+        Iniciar Corrida
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+<script>
+    function contar() {
+        var numero_voltas = Number(input_numero_voltas.value);
+        var contador = 1;
+
+        while (contador <= numero_voltas) {
+            p_msg.innerHTML += ` Carro dando a ${contador}ª volta <br>`;
+            contador += 1;
+        }
+        p_msg.innerHTML += ` Corrida finalizada! `;
+    }
+</script>

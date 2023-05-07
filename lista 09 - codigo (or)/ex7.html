@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <h1>Calculadora de cansaço do aluno SPTech. </h1>
+    <p>Meio de Transporte:</p>
+    <select name="transporte" id="input_transporte">
+        <option value="onibus">Ônibus</option>
+        <option value="metro">Metrô</option>
+        <option value="carro">Carro</option>
+        <option value="bicicleta">Bicicleta</option>
+    </select>
+    <p>Distância da faculdade (KM):</p>
+    <input type="text" id="input_distancia">
+    <button onclick="calcularCansaco()">
+        Calcular cansaço
+    </button>
+</body>
+</html>
+<script>
+    function calcularCansaco() {
+        var distancia = Number(input_distancia.value);
+        var transporte = input_transporte.value;
+
+        if (distancia <= 10) {
+            if (transporte == 'carro' || transporte == 'metro' || transporte == 'onibus') {
+                alert("Tá tranks ...")
+            } else {
+                alert("É ... um pouco cansado ...")
+            }
+        } else {
+             if (transporte == 'carro') {
+                alert("É ... um pouco cansado ...")
+            } else if (transporte == 'metro' || transporte == 'onibus') {
+                alert("Bem cansado ...")
+            } else {
+                alert("Vish ... tá só o pó ...")
+            }
+        }
+    }
+</script>

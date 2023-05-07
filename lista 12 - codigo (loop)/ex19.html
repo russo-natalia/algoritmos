@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+</head>
+<body>
+    <p>Quantas xícaras de café com leite ja bebeu?</p>
+    <input type="number" id="input_xicaras">
+    <br><br>
+    <button onclick="contar()">
+        Ver a quantidade
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+<script>
+    function contar() {
+        var xicaras = Number(input_xicaras.value);
+        var contador = 1;
+
+        while (contador <= xicaras) {
+            if (contador == 1) {
+                p_msg.innerHTML = `<img width="50px" src="https://media.istockphoto.com/id/505767761/pt/foto/medida-de-colher-de-ch%C3%A1-de-caf%C3%A9-instant%C3%A2neo-de-granulado.jpg?s=612x612&w=0&k=20&c=6MAxhhqiVhXukZpCB0smb91EBCjIhpOGzq4_4gXtT8c=" alt="">
+                <img width="50px" src="https://media.istockphoto.com/id/505767761/pt/foto/medida-de-colher-de-ch%C3%A1-de-caf%C3%A9-instant%C3%A2neo-de-granulado.jpg?s=612x612&w=0&k=20&c=6MAxhhqiVhXukZpCB0smb91EBCjIhpOGzq4_4gXtT8c=" alt="">
+                <img width="50px" src="https://www.acasaencantada.com.br/wp-content/uploads/2020/05/como-conservar-leite-em-po-03-530x794.jpg" alt="">`;
+            } else {
+                p_msg.innerHTML += `<img width="50px" src="https://media.istockphoto.com/id/505767761/pt/foto/medida-de-colher-de-ch%C3%A1-de-caf%C3%A9-instant%C3%A2neo-de-granulado.jpg?s=612x612&w=0&k=20&c=6MAxhhqiVhXukZpCB0smb91EBCjIhpOGzq4_4gXtT8c=" alt="">
+                <img width="50px" src="https://media.istockphoto.com/id/505767761/pt/foto/medida-de-colher-de-ch%C3%A1-de-caf%C3%A9-instant%C3%A2neo-de-granulado.jpg?s=612x612&w=0&k=20&c=6MAxhhqiVhXukZpCB0smb91EBCjIhpOGzq4_4gXtT8c=" alt="">
+                <img width="50px" src="https://www.acasaencantada.com.br/wp-content/uploads/2020/05/como-conservar-leite-em-po-03-530x794.jpg" alt="">`;
+            }
+
+            contador += 1;
+        }
+    }
+</script>

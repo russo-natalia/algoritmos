@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    Informe o saldo na conta: 
+    <input type="text" id="input_saldo_conta">
+    <br>
+    Informe o valor do debito:
+    <input type="text" id="input_debito">
+    <br>
+    <button onclick="verificar_debito()">
+        Analisar conta
+    </button>
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function verificar_debito() {
+        var saldo = Number(input_saldo_conta.value);
+        var debito = Number(input_debito.value);
+
+        var novoSaldo = saldo - debito;
+        p_mensagem.innerHTML = `O saldo atual da conta corrente é R$${novoSaldo}`;
+
+        if (novoSaldo < 0) {
+            p_mensagem.innerHTML = `<b style="color:red">O saldo atual da conta corrente é R$${novoSaldo}</b>`;
+        }
+    }
+</script>

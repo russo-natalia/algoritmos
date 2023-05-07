@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 10</title>
+</head>
+
+<body>
+    <p>Lado 1:</p>
+    <input type="number" id="input_lado1">
+    <p>Lado 2:</p>
+    <input type="number" id="input_lado2">
+    <p>Lado 3:</p>
+    <input type="number" id="input_lado3">
+    <br><br>
+    <button onclick="verificarTriangulo()">
+        Tipo Triângulo
+    </button>
+</body>
+
+</html>
+
+<script>
+    function verificarTriangulo() {
+        var lado1 = Number(input_lado1.value);
+        var lado2 = Number(input_lado2.value);
+        var lado3 = Number(input_lado3.value);
+
+        if (lado1 <= 0 || lado2 <= 0 || lado3 <= 0) {
+            alert('Insira números positivos.')
+        } else {
+            if (lado1 > (lado2 + lado3) || lado2 > (lado1 + lado3) || lado3 > (lado2 + lado1)) {
+                alert('Um dos valores não é válido')
+            } else {
+                if (lado1 == lado2 && lado2 == lado3) {
+                    alert('Equilátero')
+                } else if (lado1 == lado2 || lado2 == lado3 || lado3 == lado1) {
+                    alert('Isósceles')
+                } else if (lado1 != lado2 && lado2 != lado3 && lado3 != lado1) {
+                    alert('Escaleno ')
+                }
+            }
+        }
+    }
+</script>

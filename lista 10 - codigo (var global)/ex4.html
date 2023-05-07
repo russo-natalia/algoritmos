@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+   <button onclick="moverEsquerda()">
+    Mover p/ Direita
+   </button> 
+
+   <button onclick="moverDireita()">
+    Mover p/ Esquerda
+   </button>
+
+   <input type="number" id="input_pixels" placeholder="Quantos Pixels?">
+   <br><br>
+   <img id="img_mover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWtErZTYe-TwOl8fadBUJVNoLnT90QeI1rzQ&usqp=CAU" alt="Bart Simpson num skate">
+
+</body>
+</html>
+
+<script>
+
+    var pixels = 0;
+
+    function moverEsquerda() {
+        pixels = pixels + Number(input_pixels.value);
+
+        img_mover.style.marginLeft = pixels + 'px' ;
+    }
+    
+    function moverDireita() {
+        pixels = pixels - Number(input_pixels.value);
+
+        img_mover.style.marginLeft = `${pixels}px`;
+    }
+</script>

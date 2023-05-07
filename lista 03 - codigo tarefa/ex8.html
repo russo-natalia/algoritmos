@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <p>Informe o nome do guerreiro: </p>
+    <input id="input_nome_guerreiro" type="text">
+    <br>
+    <p>Informe o ki normal do guerreiro: </p>
+    <input id="input_ki_normal" type="number">
+    <br><br>
+    <button onclick="formas_ki()">Ver ki em cada forma</button>
+</body>
+</html>
+<script>
+    function formas_ki() {
+        var nome_guerreiro = input_nome_guerreiro.value;
+        var ki = Number(input_ki_normal.value);
+
+        var forma_super = ki * 50;
+        var forma_super2 = ki * 100;
+
+        alert("O guerreiro "+ nome_guerreiro + " em sua forma Super Sayajin tem o ki = " + forma_super);
+        alert("O guerreiro "+ nome_guerreiro + " em sua forma Super Sayajin 2 tem o ki = " + forma_super2);
+    }
+</script>

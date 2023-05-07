@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <button onclick="contar()">
+        S2 Pares
+    </button>
+    <div id="div_mensagem"></div>
+</body>
+</body>
+</html>
+<script>
+    function contar() {
+        qtdd = 0;
+
+        while (qtdd < 100) {
+            qtdd += 2;
+            div_mensagem.innerHTML += `${qtdd} <br>`;
+        }
+    }
+</script>

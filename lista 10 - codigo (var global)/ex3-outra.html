@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    <p id="p_msg" style="color:blue;">Total guardado no cofrinho: R$<u>0</u> <br>
+        Depósitos efetuados: <u>0</u> <br>
+        Retiradas efetuadas: <u>0</u></p>
+
+    <button onclick="depositar50()">
+        Depositar 0,50
+    </button>
+
+    <button onclick="depositar2()">
+        Depositar 2,00
+    </button>
+
+    <button onclick="retirar50()">
+        Retirar 0,50
+    </button>
+
+    <br><br>
+
+    <input type="number" id="input_valor">
+
+    <button onclick="retirar()">
+        Retirar
+    </button>
+
+</body>
+
+</html>
+
+<script>
+    var totalGuardado = 0;
+    var depositos = 0;
+    var retiradas = 0;
+
+    function depositar50() {
+        totalGuardado += 0.50;
+        depositos += 1;
+        atualizar_texto();
+    }
+
+    function depositar2() {
+        totalGuardado += 2;
+        depositos += 1;
+        atualizar_texto();
+    }
+
+    function retirar50() {
+        totalGuardado -= 0.50;
+        retiradas += 1;
+        atualizar_texto();
+    }
+
+    function retirar() {
+        totalGuardado -= Number(input_valor.value);
+        retiradas += 1;
+        atualizar_texto();
+    }
+    function atualizar_texto() {
+        p_msg.innerHTML = `
+        Total guardado no cofrinho: R$<u>${totalGuardado}</u> <br>
+        Depósitos efetuados: <u>${depositos}</u> <br>
+        Retiradas efetuadas: <u>${retiradas}</u>
+        `
+    }
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <h1>Seleção de pilotos</h1>
+    <h2>Dados da Seleção</h2>
+    Informe a altura minima da seleção: <input type="text" id="input_minima_selecao">
+    <br><br>
+    Informe a altura maxima da seleção: <input type="text" id="input_max_selecao">
+    <br>
+    <hr>
+    <h2>Dados do Candidato Piloto</h2>
+    Informe o nome do piloto: <input type="text" id="input_nome_piloto">
+    <br><br>
+    Informe a altura do piloto: <input type="text" id="input_altura_piloto">
+    <br> <br>
+    <button onclick="verificarSelecao()">
+        Verificar Seleção
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    function verificarSelecao() {
+        var max = Number(input_max_selecao.value);
+        var min = Number(input_minima_selecao.value);
+
+
+        if (min > 1 && max > min) {
+            var nome = input_nome_piloto.value;
+            var altura = Number(input_altura_piloto.value);
+
+            if (altura >= min && altura <= max) {
+                p_msg.innerHTML = `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto`;
+            } else  {
+                p_msg.innerHTML = `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos`;
+            }
+        } else {
+            alert('Informações de Máximo e Mínimo incorretas!');
+        }
+
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    Informe a quantidade de passagens: <input type="text" id="input_passagens">
+    <br><br>
+    <button onclick="comprar()">
+        Comprar
+    </button>
+</body>
+</html>
+
+<script>
+    function comprar() {
+        var passagens = Number(input_passagens.value);
+        var valor = 4.40;
+        var total = passagens * valor;
+
+        if (passagens >= 8 && passagens <= 19) {
+            var desconto = (valor * 3)/ 100;
+        } else if (passagens >= 20 && passagens <= 49) {
+            var desconto = (valor * 5)/100;
+        } else if (passagens > 50) {
+            var desconto = (valor * 7)/100;
+        }
+
+        
+    }
+</script>

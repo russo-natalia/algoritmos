@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <p>Quantos anos você tem?</p>
+    <input type="number" id="input_idade">
+    <br>
+    <button onclick="contar()">
+        Linha da Vida
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+<script>
+    function contar() {
+        var idade = Number(input_idade.value);
+
+        var contador = 0;
+
+        while (contador <= idade) {
+            if (contador <= 4) {
+                p_msg.innerHTML += `${contador} anos (Primeira Infância) <br>`;
+            } else if (contador <=6) {
+                p_msg.innerHTML += `${contador} anos (Pré-escolar) <br>`;
+            } else if (contador <= 10) {
+                p_msg.innerHTML += `${contador} anos (Segunda Infância) <br>`;
+            } else if (contador <= 18) {
+                p_msg.innerHTML += `${contador} anos (Adolescência) <br>`;
+            } else if (contador <= 50) {
+                p_msg.innerHTML += `${contador} anos (Adulto) <br>`;
+            } else if (contador <= 100) {
+                p_msg.innerHTML += `${contador} anos (Melhor idade) <br>`;
+            } else {
+                p_msg.innerHTML += `${contador} anos (Matusalém) <br>`;
+            }
+            contador += 1;
+        }
+        p_msg.innerHTML += `Idade: ${idade}`;
+    }
+</script>

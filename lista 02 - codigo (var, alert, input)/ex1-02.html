@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 Aula 2</title>
+</head>
+<body>
+    Nota 1: <input id="input_n1" type="number"> <br><br>
+    Nota 2: <input id="input_n2" type="number"> <br><br>
+    Nota 3: <input id="input_n3" type="number"> <br><br>
+    <button onclick="media()">
+        Ver média das continuadas
+    </button>
+    
+</body>
+</html>
+
+<script>
+    function media() {
+        alert((Number(input_n1.value) + Number(input_n2.value) + Number(input_n3.value))/3)
+    }
+</script>

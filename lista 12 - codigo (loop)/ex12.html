@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+
+<body>
+    <p>Insira um número:</p>
+    <input type="number" min="2" max="9" id="input_numero">
+    <br><br>
+    <p>Multiplicar ate qual número:</p>
+    <input type="number" id="input_numero_final">
+    <br><br>
+    <button onclick="tabuada()">
+        Ver Tabuada
+    </button>
+    <p id="p_msg"></p>
+</body>
+
+</html>
+
+<script>
+    function tabuada() {
+        var numero = Number(input_numero.value);
+        var numero_final = Number(input_numero_final.value);
+        var contador = 1;
+
+        while (contador <= numero_final) {
+            if ((numero * contador) % 2 == 0) {
+                p_msg.innerHTML += `<span style='color: blue'>${numero} X ${contador} = ${numero * contador} </span><br>`;
+
+            } else {
+                p_msg.innerHTML += `<span style='color: red'>${numero} X ${contador} = ${numero * contador} </span><br>`;
+            }
+            contador += 1;
+
+        }
+    }
+</script>

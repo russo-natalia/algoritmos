@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <button onclick="contar()">
+        Números cabalísticos
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+<script>
+    function contar() {
+        qtdd = 0;
+        while (qtdd < 30) {
+            qtdd += 1;
+            if (qtdd == 3 || qtdd == 4 || qtdd == 7 || qtdd == 10 || qtdd == 12) {
+                p_msg.innerHTML += ``
+            }else {
+                p_msg.innerHTML += `${qtdd} <br>`
+            }
+        }
+    }
+</script>

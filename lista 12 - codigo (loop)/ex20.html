@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20</title>
+</head>
+
+<body>
+    <p>Quantos depósitos?</p>
+    <input type="number" id="input_depositos">
+    <p>Qual o valor do depósito?</p>
+    <input type="number" id="input_valor">
+    <br><br>
+    <button onclick="contar()">
+        Acompanhar grana
+    </button>
+    <p id="p_msg"></p>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var depositos = Number(input_depositos.value);
+        var valor = Number(input_valor.value);
+        var total = 0;
+        var contador = 1;
+
+        while (contador <= depositos) {
+            total += valor;
+            p_msg.innerHTML += `${contador}º Mês: R$ ${total} <br>`;
+            contador += 1;
+        }
+        p_msg.innerHTML += `Total guardado: R$${total} <br>`;
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    Informe a Nota 1:
+    <input type="number" id="input_nota1">
+    Informe a Nota 2:
+    <input type="number" id="input_nota2">
+
+    <button onclick="media()">
+        Verificar Situação
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    function media() {
+        var nota1 = Number(input_nota1.value);
+        var nota2 = Number(input_nota2.value);
+        var media = (nota1 + nota2)/2;
+
+        if (media >= 6) {
+            p_msg.innerHTML = `Parabéns, aprovado!`;
+        }
+        else {
+            p_msg.innerHTML = `Tente outra vez...`;
+        }
+    }
+</script>

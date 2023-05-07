@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01: Introdução a JS</title>
+</head>
+<body>
+
+   <button onclick="dar_boas_vindas()">Exibir boas vindas</button> 
+    <br>
+    <p>Insira uma mensagem: </p><input id="input_mensagem">
+    <br><br>
+    <button onclick="mensagem()">Mensagem</button>
+</body>
+</html>
+
+<!--Colocar sempre o script em baixo: padronização e melhor performance-->
+<script>
+
+    //tudo que está fora de função, é executado quando a página terminar de carregar
+    alert("bom dia");
+
+    //comentário em js
+    function dar_boas_vindas() {
+        alert("Seja Bem-Vindo!")  
+    }
+
+    function mensagem() {
+        alert("A mensagem digitada é: " + input_mensagem.value)
+    }
+
+</script>

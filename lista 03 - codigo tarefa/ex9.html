@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <p>Informe seu nome: </p>
+    <input id="input_nome" type="text">
+    <br>
+    <p>Informe a nota da avaliação continuada: </p>
+    <input id="input_nota_continuada" type="number">
+    <br>
+    <p>Informe a nota da avaliação semestral: </p>
+    <input id="input_nota_semestral" type="number">
+    <br><br>
+    <button onclick="calculo_media()">Calcular a média</button>
+</body>
+</html>
+
+<script>
+    function calculo_media() {
+        var nome = input_nome.value;
+        var nota_continuada = Number(input_nota_continuada.value);
+        var nota_semestral = Number(input_nota_semestral.value);
+
+        var media = (nota_continuada * 40/100) + (nota_semestral * 60/100);
+
+        alert("A média de " + nome + " será de " + media);
+    }
+</script>

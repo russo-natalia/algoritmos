@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    Informe a última sitcom que assistiu:
+    <input type="text" id="input_sitcom">
+    <br>
+    Informe o total de episódios que assistiu:
+    <input type="text" id="input_total_episodios">
+    <br>
+    <button onclick="verificarNivel()">
+        Verificar nível
+    </button>
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function verificarNivel() {
+        var sitcom = input_sitcom.value;
+        var numEpisodios = Number(input_total_episodios.value);
+        var totalMinutos = numEpisodios * 22;
+        var totalHoras = totalMinutos / 60;
+
+        p_mensagem.innerHTML = `Vejo que você gosta da série ${sitcom}`;
+
+        if (totalHoras > 30) {
+            p_mensagem.innerHTML += `<br> Uau, você realmente gosta dessa série!`;
+        };
+    };
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    Informe a Temperatura do Ambiente:
+    <input type="number" id="input_temperatura">
+    <br>
+    <button onclick="verificarClima()">
+        Verificar Clima
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    function verificarClima() {
+        var temperatura = Number(input_temperatura.value);
+
+        if (temperatura < 10) {
+            p_msg.innerHTML = `<img style="width: 300px;" src="https://www.paxbahia.com.br/images/bl/alimentos-que-devemos-cortar-para-manter-uma-dieta-saudavel.jpg" alt="Alimento em bom estado">`;
+        }
+        else {
+            p_msg.innerHTML = `<img style="width: 300px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRxihGaQLJLPZt1Y1A9tRcQTpgflTHIgyk3g&usqp=CAU" alt="Alimento podre">`;
+        }
+    }
+</script>

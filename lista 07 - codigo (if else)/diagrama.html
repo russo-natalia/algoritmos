@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama</title>
+</head>
+<body>
+    Temperatura: <input type="text" id="input_temp">
+    <button onclick="analisarTemperatura()">
+        Analisar Temperatura
+    </button>
+</body>
+</html>
+
+<script>
+    function analisarTemperatura() {
+       var temp = Number(input_temp.value);
+
+       if (temp < 10) {
+        alert("Temperatura está muito baixa.")
+       }
+       else {
+            if (temp > 20) {
+                alert('Temperatura está muito alta');
+            }
+            else {
+                alert('Temperatura está ideal');
+            }
+       }
+    }
+
+    function elseIF() {
+        var temp = Number(input_temp.value);
+
+        if (temp < 10) {
+            alert('Temperatura muito baixa')
+        }
+        else if (temp > 20) {
+            alert('Temperatura ideal')
+        }
+        else {
+            alert('Temperatura muito alta')
+        }
+    }
+</script>

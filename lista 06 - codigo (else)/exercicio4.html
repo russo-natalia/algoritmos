@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    
+    Informe a frequência do aluno:
+    <input type="number" id="input_frequencia">
+    <br>
+    <button onclick="analisarFrequencia()">
+        Analisar Frequencia
+    </button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    function analisarFrequencia() {
+        var frequencia = Number(input_frequencia.value);
+
+        if (frequencia < 50) {
+            p_msg.innerHTML = `<img style="width: 200px;" src="https://img.freepik.com/fotos-gratis/turista-apontando-para-cima_1368-7017.jpg?w=2000" alt="Turista">`;
+        }
+        else {
+            p_msg.innerHTML = `<img style="width: 200px;" src="https://img.freepik.com/fotos-premium/um-retrato-de-um-menino-inteligente-e-estudioso-com-oculos-vermelhos_156448-216.jpg?w=2000" alt="Estudioso">`;
+        }
+    }
+</script>

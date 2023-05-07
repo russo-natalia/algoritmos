@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <p>Informe o valor da passagem: </p>
+    <input id="input_valor_passagem_inteiro" type="number">
+    <br>
+    <p>Informe o número de viagens por mês: </p>
+    <input id="input_num_viagens" type="number">
+    <br><br>
+    <button onclick="economia()">Ver economia</button>
+</body>
+</html>
+
+<script>
+    function economia() {
+        var passagem_inteira = Number(input_valor_passagem_inteiro.value);
+        var num_viagens = Number(input_num_viagens.value);
+
+        var total_passagem_inteira = passagem_inteira * num_viagens;
+
+        var total_economia = total_passagem_inteira / 2;
+
+        alert("Você economizará R$" + total_economia + " por mês.");
+
+    }
+    
+</script>

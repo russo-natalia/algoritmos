@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>
+</head>
+<body>
+    <p>Quantas Coca Cola ja bebeu?</p>
+    <input type="number" id="input_latinhas">
+    <br><br>
+    <button onclick="contar()">
+        Ver a quantidade
+    </button>
+    <p id="p_msg"></p>
+    
+</body>
+</html>
+<script>
+    function contar() {
+        var latinhas = Number(input_latinhas.value);
+        var contador = 1;
+
+        while (contador <= latinhas) {
+            if (contador == 1) {
+                p_msg.innerHTML = `<img width="50px" src="https://dlpvinhos.agilecdn.com.br/008265_1.jpg" alt="">`;
+            } else {
+                p_msg.innerHTML += `<img width="50px" src="https://dlpvinhos.agilecdn.com.br/008265_1.jpg" alt="">`;
+            }
+
+            contador += 1;
+        }
+    }
+</script>

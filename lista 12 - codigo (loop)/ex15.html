@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+
+<body>
+    <p>Quantidade de elefantes?</p>
+    <input type="number" id="input_elefante">
+    <br><br>
+    <button onclick="contar()">
+        Atazanar a médium
+    </button>
+    <p id="p_msg"></p>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var elefantes = Number(input_elefante.value);
+        var frase = `incomodam, `;
+        var contador = 1;
+        
+        while (contador <= elefantes) {
+            p_msg.innerHTML += `1 elefante incomoda muita gente! <br>`;
+            if (contador != 1) {
+                frase += `incomodam, `;
+                p_msg.innerHTML +=`${contador} elefante ${frase} muita mais! <br>`
+            }
+            contador +=1;
+        }
+
+    }
+</script>

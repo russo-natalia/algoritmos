@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <p>Informe a quantidade de votos no Candidato A:</p>
+    <input id="input_votos_a" type="number">
+    <br>
+    <p>Informe a quantidade de votos no Cadidato B: </p>
+    <input id="input_votos_b" type="number">
+    <br>
+    <p>Informe a quantidade de votos em branco: </p>
+    <input id="input_votos_branco" type="number">
+    <br>
+    <p>Informe a quantidade de votos nulos: </p>
+    <input id="input_votos_nulo" type="number">
+    <br><br>
+    <button onclick="resultado_eleicao()">Resultado da eleição</button>
+    <br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function resultado_eleicao() {
+        var votos_a = Number(input_votos_a.value);
+        var votos_b = Number(input_votos_b.value);
+        var votos_branco = Number(input_votos_branco.value);
+        var votos_nulo = Number(input_votos_nulo.value);
+
+        var total_votos = votos_a + votos_b + votos_branco + votos_nulo;
+        var total_invalidos = votos_branco + votos_nulo;
+        
+        var porcentagem_a = (votos_a * 100) / total_votos;
+        var porcentagem_b = (votos_b * 100) / total_votos;
+        var porcentagem_invalidos = (total_invalidos * 100) / total_votos;
+
+
+        div_mensagem.innerHTML = `<b>Total de votos: <u>${total_votos}</u></b></br>
+        <b>Candidato A:</b> ${porcentagem_a}% (${votos_a} votos)</br>
+        <b>Candidato B:</b> ${porcentagem_b}% (${votos_b} votos)</br>
+        <b>Branco:</b> ${porcentagem_invalidos}% (${total_invalidos} votos)</br>`
+
+    }
+</script>
