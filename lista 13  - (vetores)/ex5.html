@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <p>Nome do Filme: </p>
+    <input type="text" id="input_filme">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar Filme</button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    var listaFilmes = [];
+    var totalFilmes = 0;
+    function cadastrar() {
+        var filme = input_filme.value;
+        listaFilmes.push(filme);
+        totalFilmes += 1;
+
+        if (listaFilmes.indexOf(listaFilmes[2]) < 0) {
+            p_msg.innerHTML =`
+        Seu filme favorito: ${listaFilmes[0]} <br>  
+        Seu 3º filme favorito: Você ainda não tem <br>
+        Total de filmes cadastrados: ${totalFilmes} <br>
+        `;
+        } else {
+            p_msg.innerHTML =`
+        Seu filme favorito: ${listaFilmes[0]} <br>  
+        Seu 3º filme favorito: ${listaFilmes[2]} <br>
+        Total de filmes cadastrados: ${totalFilmes} <br>
+        `;
+        }
+        
+    }
+</script>

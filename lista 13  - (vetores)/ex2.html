@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <p>Destino de viagem: </p>
+    <input type="text" id="input_destino">
+    <br><br>
+    <button onclick="adicionarDestino()">Adicionar</button>
+    <br><br>
+    <button onclick="primeiraViagem()">Primeira Viagem</button>
+    <button onclick="terceiraViagem()">Terceira Viagem</button>
+    <button onclick="ultimaViagem()">Última Viagem</button>
+    <p id="p_msg"></p>
+</body>
+</html>
+<script>
+    var listaDestino = [];
+
+    function adicionarDestino() {   
+        var destinoNovo = input_destino.value;
+        listaDestino.push(`${destinoNovo}`);
+    }
+
+    function primeiraViagem() {
+        if (listaDestino.lenght == 0) {
+           p_msg.innerHTML = `Ainda não viajou.`; 
+        } else  {
+            p_msg.innerHTML = listaDestino[0];
+        }
+        
+    }
+    function terceiraViagem() {
+        if (listaDestino.indexOf(listaDestino[2]) < 0) {
+           p_msg.innerHTML = `Ainda não fez a 3ª viagem.`; 
+        } else  {
+            p_msg.innerHTML = listaDestino[2];
+        }
+        
+    }
+    function ultimaViagem() {
+        if (listaDestino.length == 0) {
+            p_msg.innerHTML = `Ainda não viajou.`;
+        } else  {
+            p_msg.innerHTML = listaDestino[listaDestino.length - 1];
+        }
+        
+    }
+</script>

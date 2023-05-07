@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <p>Nome do Bairro: </p>
+    <input type="text" id="input_bairro">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar Bairro</button>
+    <p>Bairro para relembrar: </p>
+    <input type="text" id="input_relembrar">
+    <br><br>
+    <button onclick="relembrar()">Relembrar Bairro</button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    var listaBairros = [];
+    function cadastrar() {
+        var bairro = input_bairro.value;
+        listaBairros.push(bairro);
+    }
+    function relembrar() {
+        var relembrar = Number(input_relembrar.value);
+        if (listaBairros.indexOf(listaBairros[relembrar]) < 0) {
+            p_msg.innerHTML = `Você ainda não morou num ${relembrar}º bairro!"`;
+        } else {
+            p_msg.innerHTML = listaBairros[relembrar-1];
+        }
+
+    }
+</script>
