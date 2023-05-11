@@ -7,35 +7,21 @@
     <title>Exercício 8</title>
 </head>
 <body>
-    <p>Nome do Projeto: </p>
-    <input type="text" id="input_projeto">
+    <p>Nome do Aluno: </p>
+    <input type="text" id="input_aluno">
     <br><br>
-    <button onclick="cadastrar()">Registrar projeto</button>
-    <br><br>
-    <button onclick="verFavoritos()">Ver favoritos</button>
+    <button onclick="cadastrar()">Cadastrar Aluno</button>
     <p id="p_msg"></p>
 </body>
 </html>
 
 <script>
-    var listaProjetos = [];
-    var totalProjetos = 0;
+    var listaAlunos = [];
     function cadastrar() {
-        var projeto = input_projeto.value;
-        listaProjetos.push(projeto);
-        totalProjetos += 1;
-
-    if ()
-    }
-
-    function verFavoritos() {
-        for (var contador = 0; contador < totalFilmes; contador++) {
-            p_msg.innerHTML +=`${listaFilmes[contador]} <br>`;
+        var aluno = input_aluno.value;
+        listaAlunos.unshift(aluno);
+        for (var contador = 0; contador < listaAlunos.length; contador++) {
+            p_msg.innerHTML +=`${listaAlunos[contador]}<br>`; 
         }
-        p_msg.innerHTML += `Total: ${totalFilmes} <br>
-        O que mais gosta é ${listaFilmes[0]} <br>
-        E desses, o que menos gosta é ${listaFilmes[listaFilmes.length - 1]} <br>
-        `;
-        
     }
 </script>

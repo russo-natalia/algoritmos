@@ -7,6 +7,27 @@
     <title>Exercício 7</title>
 </head>
 <body>
-    
+    <p>Nome do Filme: </p>
+    <input type="text" id="input_filme">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar Filme</button>
+    <p id="p_msg"></p>
 </body>
 </html>
+
+<script>
+    var listaFilmes = [];
+    function cadastrar() {
+        var filme = input_filme.value;
+        listaFilmes.push(filme);
+        for (var contador = 0; contador < listaFilmes.length; contador++) {
+            if (contador % 2 == 0) {
+               p_msg.innerHTML +=`<span style='color: blue'>${listaFilmes[contador]}</span> <br>`; 
+            } else {
+                p_msg.innerHTML +=`<span style='color: red'>${listaFilmes[contador]}</span> <br>`; 
+            }
+            
+        }
+    }
+
+</script>

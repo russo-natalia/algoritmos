@@ -17,18 +17,12 @@
 
 <script>
     var listaFilmes = [];
-    var totalFilmes = 0;
     function cadastrar() {
         var filme = input_filme.value;
         listaFilmes.push(filme);
-        totalFilmes += 1;
-        verFavoritos();
-    }
-
-    function verFavoritos() {
-        for (var contador = 0; contador < totalFilmes; contador++) {
+        for (var contador = 0; contador < listaFilmes.length; contador++) {
             p_msg.innerHTML +=`${listaFilmes[contador]} <br>`;
         }
-        
     }
+
 </script>
