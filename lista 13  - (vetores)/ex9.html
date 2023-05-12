@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <p>Nome do Projeto: </p>
+    <input type="text" id="input_projeto">
+    <br><br>
+    <button onclick="cadastrar()">Registrar Projeto</button>
+    <button onclick="exibir()">Registrar Projeto</button>
+
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    var listaProjetos = [];
+    var totalProjetos = 0;
+    function cadastrar() {
+        var projeto = input_projeto.value;
+        listaProjetos.push(projeto);
+        totalProjetos +=1;
+        if (totalProjetos <= 4) {
+           var experiencia = 'Júnior'
+        } else if (totalProjetos <= 12) {
+            var experiencia = `Pleno desde ${listaProjetos[4]}`
+        } else {
+            var experiencia = `Sênior desde ${listaProjetos[12]}`
+        }
+        p_msg.innerHTML =`
+        Você já fez ${totalProjetos} projetos. Por isso você é um profissional ${experiencia} 
+        `;
+    }
+    function exibir() {
+        for (var contador = 0; contador < listaProjetos.length; contador++) {
+            p_msg.innerHTML +=`${listaProjetos[listaProjetos.length - contador]}<br>`; 
+        }
+    }
+</script>

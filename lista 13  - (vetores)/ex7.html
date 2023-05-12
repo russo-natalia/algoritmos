@@ -20,12 +20,21 @@
     function cadastrar() {
         var filme = input_filme.value;
         listaFilmes.push(filme);
+        p_msg.innerHTML = ``;
         for (var contador = 0; contador < listaFilmes.length; contador++) {
+
+            var cor = 'red';
             if (contador % 2 == 0) {
-               p_msg.innerHTML +=`<span style='color: blue'>${listaFilmes[contador]}</span> <br>`; 
-            } else {
-                p_msg.innerHTML +=`<span style='color: red'>${listaFilmes[contador]}</span> <br>`; 
+                cor = 'blue';
             }
+
+               p_msg.innerHTML +=`<span style='color: ${cor}'>${listaFilmes[contador]}</span> <br>`; 
+
+            // if (contador % 2 == 0) {
+            //    p_msg.innerHTML +=`<span style='color: blue'>${listaFilmes[contador]}</span> <br>`; 
+            // } else {
+            //     p_msg.innerHTML +=`<span style='color: red'>${listaFilmes[contador]}</span> <br>`; 
+            // }
             
         }
     }

@@ -19,6 +19,7 @@
     var listaFilmes = [];
     function cadastrar() {
         var filme = input_filme.value;
+        p_msg.innerHTML = ``;
         listaFilmes.push(filme);
         for (var contador = 0; contador < listaFilmes.length; contador++) {
             p_msg.innerHTML +=`${listaFilmes[contador]} <br>`;
