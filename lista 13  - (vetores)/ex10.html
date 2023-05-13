@@ -7,6 +7,39 @@
     <title>Exercício 10</title>
 </head>
 <body>
-    
+    <p> Insira uma Linha de Ônibus: </p>
+    <input type="text" id="input_linha">
+    <br><br>
+    <button onclick="cadastrar()">Gravar Buzão</button>
+    <p> Pesquisar uma Linha de Ônibus: </p>
+    <input type="text" id="input_pesquisa">
+    <br><br>
+    <button onclick="pesquisar()">Pesquisar</button>
+
+    <p id="p_msg"></p>
 </body>
 </html>
+<script>
+    var listaLinhas = [];
+    function cadastrar() {
+        var linha = input_linha.value;
+        listaLinhas.push(linha);
+
+        p_msg.innerHTML = '';
+    
+
+        for (var contador = 0; contador < listaLinhas.length; contador++) {
+            p_msg.innerHTML +=`${listaLinhas[[listaLinhas.length-1] - contador]}<br>`
+        }
+    }
+
+    function pesquisar() {
+        var pesquisa = input_pesquisa.value;
+
+        if (listaLinhas.indexOf(pesquisa) < 0) {
+            p_msg.innerHTML +=`Você nunca pegou essa linha.<br>`
+        } else {
+
+        }
+    }
+</script>
