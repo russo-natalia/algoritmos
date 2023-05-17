@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <p> Nome do produto: </p>
+    <input type="text" id="input_produto">
+    <p> Preço de compra: </p>
+    <input type="text" id="input_preco">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Relatório de estoque</button>
+    <p id="p_msg"></p>
+</body>
+</html>
+<script>
+    var listaProdutos = [];
+    var listaPrecos = [];
+    var somaTotal = 0;
+    var mediaTotal = 0;
+    var maior = 0;
+    var menor = 100000;
+    var nome_maior = '';
+    var nome_menor = '';
+
+
+    function cadastrar() {
+        var produto = input_produto.value;
+        var preco = input_preco.value;
+
+        listaProdutos.push(produto);
+        listaPrecos.push(preco);
+    }
+
+    function atualizar() {
+        p_msg.innerHTML = `Total de produtos: ${listaProdutos.length} <br>`;
+
+        for (var contador = 0; contador < listaProdutos.length; contador++) {
+            p_msg.innerHTML += `<br>
+            Produto ${contador + 1}: ${listaProdutos[contador]} <br>
+            Preço de compra: R$${listaPrecos[contador]}. Vender por R$${listaPrecos[contador]*1.25} <br>
+            `
+            somaTotal += Number(listaPrecos[contador]);
+            mediaTotal = somaTotal/listaProdutos.length;
+            if (listaPrecos[contador] >= maior) {
+                maior = listaPrecos[contador];
+                nome_maior = listaProdutos[contador]
+            }
+            if (listaPrecos[contador] < menor) {
+                menor = listaPrecos[contador];
+                nome_menor = listaProdutos[contador]
+            }
+        }
+        p_msg.innerHTML +=`<br>
+        O nome do produto mais caro: ${nome_maior} <br>
+        O nome do produto mais barato: ${nome_menor} <br>
+        A soma dos preços de compra dos produtos: ${somaTotal} <br> 
+        A média de preço de venda dos produtos: ${mediaTotal} <br> 
+        `
+    }
+</script>

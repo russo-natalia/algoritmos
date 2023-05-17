@@ -21,6 +21,8 @@
 </html>
 <script>
     var listaLinhas = [];
+    var num = '';
+    var totalVezes = 0;
     function cadastrar() {
         var linha = input_linha.value;
         listaLinhas.push(linha);
@@ -39,6 +41,13 @@
         if (listaLinhas.indexOf(pesquisa) < 0) {
             p_msg.innerHTML +=`Você nunca pegou essa linha.<br>`
         } else {
+            for (var contador2 = 0; contador2 < listaLinhas.length; contador2++) {
+                if (listaLinhas[contador2] == pesquisa) {
+                    totalVezes +=  1 ;
+                    num += `${contador2 + 1},`;
+                    p_msg.innerHTML = `Você já pegou essa linha ${totalVezes} vezes, nessa ordem: ${num}`
+                }
+            }
 
         }
     }
