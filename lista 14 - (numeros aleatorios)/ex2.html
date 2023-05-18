@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear time</button>
+    <p id="p_msg">
+        
+    </p>
+</body>
+</html>
+
+<script>
+    function sortear() {
+        var aleatorio = Math.random();
+
+        if (aleatorio < 0.25) {
+            p_msg.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRorhXz6HSmfVA5gqOrHbFz58ZDLZy6APkIdA&usqp=CAU" height="150px" alt="">'
+        } else if (aleatorio < 0.50) {
+            p_msg.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTupu9pcPCylw6YVosduvSgYUOSgrftVz3dLw&usqp=CAU" height="150px" alt="">'
+        } else if (aleatorio < 0.75) {
+            p_msg.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Pg_D_d6EMDvlsqsGSOv0IO0NPVLFR1qOQw&usqp=CAU" height="150px" alt="">'
+        } else {
+            p_msg.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRriVXH43vBYQhpx21wcoknvVyOB-q7aur7OA&usqp=CAU" height="150px" alt="">'
+        }
+
+    }
+</script>
