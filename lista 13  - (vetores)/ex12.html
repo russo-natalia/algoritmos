@@ -17,16 +17,23 @@
 </html>
 
 <script>
-    var listaFilhos = ['',];
+    var listaFilhos = [];
     function cadastrar() {
         var filho = Number(input_filho.value);
-        for (var contador = 0; contador < listaFilhos.length; contador++) {
-                if (listaFilhos[contador] == filho) {
-                    alert('Não pode mais de 1 filho com o mesmo nome!')
-                } else {
-                    listaFilhos.push(filho);
-                }
-            }
+
+        if (listaFilhos.indexOf(filho) != -1) {
+            alert('Não pode mais de 1 filho com o mesmo nome!')
+        }else {
+            listaFilhos.push(filho);
+        }
+
+        // for (var contador = 0; contador < listaFilhos.length; contador++) {
+        //         if (listaFilhos[contador] == filho) {
+        //             alert('Não pode mais de 1 filho com o mesmo nome!')
+        //         } else {
+        //             listaFilhos.push(filho);
+        //         }
+        //     }
     }
 
     function atualizar() {
