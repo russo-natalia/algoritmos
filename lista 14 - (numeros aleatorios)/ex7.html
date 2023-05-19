@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <button onclick="pegar_aleatorio()">Sortear imagem</button>
+    <p id="p_msg">
+    </p>
+</body>
+</html>
+
+<script>
+    var imagens = ['<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw4-ubPEUlT7PA3phpKL4TokocD_n5ZphNOg&usqp=CAU" height="150px" alt="">',
+    '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe_6hjhS4FH67soK_8yBh77MES86Sn7GN8zg&usqp=CAU" height="150px" alt="">',
+    '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRANjsso0tJ_L5AYy-Xw3wIoNGmsVjEAEy2Rw&usqp=CAU" height="150px" alt="">',
+    '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ34iEOaXace3VrMFdmWGZlPt_tA45DhQgVUA&usqp=CAU" height="150px" alt="">',
+    '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRDzmS4yJU0ztGx4tkmBRQSX4V2JWlVCD_sg&usqp=CAU" height="150px" alt="">'
+];
+
+function pegar_aleatorio() {
+    var limite = imagens.length - 1; 
+    var aleatorio = Math.random() * limite;
+
+    if (imagens.length == 0) {
+        p_msg.innerHTML = 'Não Existem mais Imagens. Reinicie'
+    } else {
+        p_msg.innerHTML = imagens[aleatorio.toFixed(0)]
+        imagens.splice(aleatorio.toFixed(0), 1);
+    }
+
+    
+    
+}
+
+</script>

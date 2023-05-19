@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <button onclick="sortear()">Jogar</button>
+    <p id="p_msg">
+        
+    </p>
+</body>
+</html>
+<script>
+    function sortear() {
+        var aleatorio = Math.random();
+
+        if (aleatorio < 0.33) {
+            p_msg.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ceH7748Iqnc40ykSupcOvnrspqwiV3iygA&usqp=CAU" height="150px" alt="">'
+        } else if (aleatorio < 0.66) {
+            p_msg.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtlNhD8PmkcBELMZcypiNVa2J7vG3CXvJ2TA&usqp=CAU" height="150px" alt="">'
+        } else {
+            p_msg.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_8UPjXx2mmtDzd6XX7G0Myh5RN4f_AJ42A&usqp=CAU" height="150px" alt="">'
+        }
+
+    }
+</script>

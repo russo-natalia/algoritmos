@@ -20,12 +20,6 @@
 <script>
     var listaProdutos = [];
     var listaPrecos = [];
-    var somaTotal = 0;
-    var mediaTotal = 0;
-    var maior = 0;
-    var menor = 100000;
-    var nome_maior = '';
-    var nome_menor = '';
 
 
     function cadastrar() {
@@ -37,6 +31,13 @@
     }
 
     function atualizar() {
+        var somaTotal = 0;
+        var mediaTotal = 0;
+        var maior = listaPrecos[0];
+        var menor = listaPrecos[0];
+        var nome_maior = listaProdutos[0];
+        var nome_menor = listaProdutos[0];
+
         p_msg.innerHTML = `Total de produtos: ${listaProdutos.length} <br>`;
 
         for (var contador = 0; contador < listaProdutos.length; contador++) {
@@ -45,16 +46,19 @@
             Preço de compra: R$${listaPrecos[contador]}. Vender por R$${listaPrecos[contador]*1.25} <br>
             `
             somaTotal += Number(listaPrecos[contador]);
-            mediaTotal = somaTotal/listaProdutos.length;
-            if (listaPrecos[contador] >= maior) {
-                maior = listaPrecos[contador];
-                nome_maior = listaProdutos[contador]
-            }
-            if (listaPrecos[contador] <= menor) {
+            if (listaPrecos[contador] < menor) {
                 menor = listaPrecos[contador];
                 nome_menor = listaProdutos[contador]
             }
+            if (listaPrecos[contador] > maior) {
+                maior = listaPrecos[contador];
+                nome_maior = listaProdutos[contador]
+
+            }
+            
         }
+        mediaTotal = somaTotal/listaProdutos.length;
+
         p_msg.innerHTML +=`<br>
         O nome do produto mais caro: ${nome_maior} <br>
         O nome do produto mais barato: ${nome_menor} <br>
