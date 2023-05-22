@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <p>Indique o resultado:</p>
+    <select name="resultado" id="select_resultado">
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select>
+    <br>
+    <button onclick="resultado()">Registrar Jogo</button>
+    <p id="p_msg"></p>
+</body>
+</html>
+
+<script>
+    var listaResultados = [];
+    var empate = 0;
+    var vitorias = 0;
+    var derrotas = 0;
+    function resultado() {
+        var resultado = select_resultado.value;
+        listaResultados.push(resultado);
+        if (resultado == 'vitoria' ) {
+            vitorias ++
+        } else if (resultado == 'empate' ) {
+            empate ++
+        } else  {
+            derrotas ++
+        }
+
+        var totalVitorias = vitorias * 3;
+        var totalTime = totalVitorias + empate;
+        var pontosPossiveis = (vitorias + empate + derrotas)* 3
+        var aproveitamento = (pontosPossiveis / totalTime) * 100;
+
+        p_msg.innerHTML = `
+        O time teve: ${vitorias} vitórias, ${empate} empates, ${derrotas} derrotas 
+        <br>
+        Pontuação total: ${totalTime} pontos 
+        <br>
+        Aproveitamento: ${aproveitamento}% 
+        `;
+
+    }
+</script>
