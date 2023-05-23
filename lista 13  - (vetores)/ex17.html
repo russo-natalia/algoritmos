@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+</head>
+<body id="body">
+    <h1>Análise de performance de Alunos - Registro</h1>
+    <span>Entre com o nome do aluno:</span>
+    <input id="input_nome_aluno"><br>
+    <span>Entre com a nota do aluno:</span>
+    <input id="input_nota_aluno"> <br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+    <p id="p_msg"></p>
+</body>
+</html>
+<script>
+    var listaNomes = [];
+    var listaNotas = [];
+    function registrar() {
+        var nome = input_nome_aluno.value;
+        var nota = Number(input_nota_aluno.value);
+
+        if (nome == '' || nota < 0 || nota > 10) {
+            alert('Preencha os campos corretamente.')
+        } else {
+            listaNomes.push(nome);
+            listaNotas.push(nota);
+
+            p_msg.innerHTML = '';
+            
+            for (var contador = 0; contador < listaNomes.length; contador++) {
+                p_msg.innerHTML += `<br>Aluno ${listaNomes[(listaNomes.length -1) - contador]} com nota ${listaNotas[(listaNotas.length-1) - contador]} <br>`;
+            }
+
+        }
+    }
+
+    function analisar() {
+        body.innerHTML = `
+        <h1>Analise de Performance de Alunos - Pesquisa</h1>
+        <span>Entre com o intervalo de notas:</span>
+        <input type="text" id="input_min" placeholder="de">
+        <input type="text" id="input_max" placeholder="até"><br>
+        <button onclick="pesquisar()">Pesquisar</button>
+       <p id="p_msg"></p>
+
+        `;
+
+    }
+
+    function pesquisar() {
+        
+        var min = Number(input_min.value);
+        var max = Number(input_max.value);
+        var maior = listaNotas[0];
+        var menor = listaNotas[0];
+        var soma = 0;
+        var listados = 0;
+
+        if (min < 0 || min > 10 || max < 0 || max > 10 || max < min) {
+            alert('Preencha de forma válida.')
+        } else {
+            for (var contador2 = 0; contador2 < listaNomes.length; contador2++) {
+                if (listaNotas[contador2] >= min && listaNotas[contador2] <= max) {
+                    p_msg.innerHTML += `O aluno ${listaNomes[contador2]} ficou com nota ${listaNotas[contador2]}<br>`;
+                    listador++
+                }
+                
+                if (listaNotas[contador2] < menor) {
+                    menor = listaNotas[contador2]
+                }
+                if (listaNotas[contador2] > maior) {
+                    maior = listaNotas[contador2]
+                }
+
+               soma += listaNotas[contador2];
+            }
+            var media = soma/listaNotas.length;
+            p_msg.innerHTML += `
+                Total de alunos registrados: ${listaNomes.length} <br>
+                Total de alunos listado: ${listados} <br>
+                Maior Nota = ${maior} <br>
+                Menor Nota = ${menor} <br>
+                Média da Nota = ${media} <br>
+                `;
+        }
+
+    }
+</script>
