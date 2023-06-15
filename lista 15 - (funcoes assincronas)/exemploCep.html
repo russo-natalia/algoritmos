@@ -57,28 +57,28 @@
             }
         
     }
-   async function buscarCepAsyncAwait() {
+   async function buscarCepAsyncAwait() { // async é para tornar a funcao assincrona
         var cep = input_cep.value;
         var urlAPI = `https://viacep.com.br/ws/${cep}/json/`;
         //fetch = buscar
         
             if (cep.length >= 8)  { // a funcao só vai funcionar quando chegar no 8 caracter
 
-                try {
-                    var resposta = await fetch(urlAPI);
+                try { // tente isso
+                    var resposta = await fetch(urlAPI); // espera terminar a requeisição e então coloca na var resposta
                     if (resposta.ok) {
-                        var respostaJSON = await resposta.json();
+                        var respostaJSON = await resposta.json(); // espera terminar a requeisição e então coloca na var respostaJSON
                         console.log("JSON: ", respostaJSON) // respostaJSON é um objeto JS (usa ,)
                         console.log('Logradouro: ' + respostaJSON.logradouro) // respostaJSON.logradouro é um texto (usa +)
                         div_mensagem.innerHTML = `
                         CEP: ${respostaJSON.cep} <br>
                         Logradouro: ${respostaJSON.logradouro}
-                        `;//precisa chamar cada informaçao f=por vez   
+                        `;//precisa chamar cada informaçao por vez   
                         input_logradouro.value = respostaJSON.logradouro;
                     }
 
-                } catch (e) {
-                    console.log("Erro: ", e)
+                } catch (e) { // qualquer erro que tenha dentro do try entrará aqui
+                    console.log("Erro: ", e) 
                 }
             }
         
