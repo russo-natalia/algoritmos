@@ -7,7 +7,7 @@
     <title>Exemplo Via CEP</title>
 </head>
 <body>
-    Cep: <input type="text" oninput="buscarCep()" id="input_cep"> <br> 
+    Cep: <input type="text" oninput="buscarCepAsyncAwait()" id="input_cep"> <br> 
     <!-- oninput é quando a funcao é chamada a cada caracter colocado -->
     Logradouro: <input type="text" id="input_logradouro"> <br>
     <!-- <button onclick="buscarCep()">Buscar CEP</button> -->
@@ -27,18 +27,25 @@
                             console.log('DEU CERTO!')
                             console.log("Resposta: ", resposta) // precisa ser utilizado ',' quando usar objetos JSON
 
-                            resposta.json() // transformando em arquivo json
-                            .then(
-                                function (respostaJSON) {
-                                    console.log("JSON: ", respostaJSON) // respostaJSON é um objeto JS (usa ,)
-                                    console.log('Logradouro: ' + respostaJSON.logradouro) // respostaJSON.logradouro é um texto (usa +)
-                                    div_mensagem.innerHTML = `
-                                    CEP: ${respostaJSON.cep} <br>
-                                    Logradouro: ${respostaJSON.logradouro}
-                                    `;//precisa chamar cada informaçao f=por vez   
-                                    input_logradouro.value = respostaJSON.logradouro;     
-                                }
-                            ) 
+                            if (resposta.ok) { // quando a ok é vdd significa que a requisição esta completa
+                                resposta.json() // transformando em arquivo json
+                                .then( // referente ao resposta.json
+                                    function (respostaJSON) {
+                                        console.log("JSON: ", respostaJSON) // respostaJSON é um objeto JS (usa ,)
+                                        console.log('Logradouro: ' + respostaJSON.logradouro) // respostaJSON.logradouro é um texto (usa +)
+                                        div_mensagem.innerHTML = `
+                                        CEP: ${respostaJSON.cep} <br>
+                                        Logradouro: ${respostaJSON.logradouro}
+                                        `;//precisa chamar cada informaçao f=por vez   
+                                        input_logradouro.value = respostaJSON.logradouro;     
+                                    }
+                                )
+                            }
+
+                            if (resposta.status == 204) {
+                                throw "Não foi possível continuar"
+                            }
+                             
                         }
                     ) 
                     .catch( // quando da erro no request (quqlquer erro do http)
@@ -47,6 +54,32 @@
                             console.log("Erro: ", erro)
                         }
                     );
+            }
+        
+    }
+   async function buscarCepAsyncAwait() {
+        var cep = input_cep.value;
+        var urlAPI = `https://viacep.com.br/ws/${cep}/json/`;
+        //fetch = buscar
+        
+            if (cep.length >= 8)  { // a funcao só vai funcionar quando chegar no 8 caracter
+
+                try {
+                    var resposta = await fetch(urlAPI);
+                    if (resposta.ok) {
+                        var respostaJSON = await resposta.json();
+                        console.log("JSON: ", respostaJSON) // respostaJSON é um objeto JS (usa ,)
+                        console.log('Logradouro: ' + respostaJSON.logradouro) // respostaJSON.logradouro é um texto (usa +)
+                        div_mensagem.innerHTML = `
+                        CEP: ${respostaJSON.cep} <br>
+                        Logradouro: ${respostaJSON.logradouro}
+                        `;//precisa chamar cada informaçao f=por vez   
+                        input_logradouro.value = respostaJSON.logradouro;
+                    }
+
+                } catch (e) {
+                    console.log("Erro: ", e)
+                }
             }
         
     }
