@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15/06/2023</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function alertar() {
+        console.log('Você foi alertado');
+    }
+    function logar() {
+        console.log('Você foi logado');
+    }
+    logar(); // funcao sincrona, elas são disparadas seguidas (juntas)
+
+    setTimeout( // funcao assincrona, ela precisa esperar para funcionar
+        function () { // função anonima 
+           alertar() // precisa estar dentro de outra function para que ele espere os 5seg
+        }
+        , 5000
+    );
+
+    // muitas vezes é necessário usar funcoes assincronas ja que pode demorar algum processo [, com o tempo estabelecido grante a funcionalidade do programa
+</script>

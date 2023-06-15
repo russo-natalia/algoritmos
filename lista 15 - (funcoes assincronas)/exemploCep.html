@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Via CEP</title>
+</head>
+<body>
+    Cep: <input type="text" oninput="buscarCep()" id="input_cep"> <br> 
+    <!-- oninput é quando a funcao é chamada a cada caracter colocado -->
+    Logradouro: <input type="text" id="input_logradouro"> <br>
+    <!-- <button onclick="buscarCep()">Buscar CEP</button> -->
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function buscarCep() {
+        var cep = input_cep.value;
+        var urlAPI = `https://viacep.com.br/ws/${cep}/json/`;
+        //fetch = buscar
+        
+            if (cep.length >= 8)  { // a funcao só vai funcionar quando chegar no 8 caracter
+                fetch(urlAPI)
+                    .then( // quando da certo o request
+                        function (resposta) { // pegando o parametro e chamando de resposta, ele vai pegar o 'resultado' do fetch
+                            console.log('DEU CERTO!')
+                            console.log("Resposta: ", resposta) // precisa ser utilizado ',' quando usar objetos JSON
+
+                            resposta.json() // transformando em arquivo json
+                            .then(
+                                function (respostaJSON) {
+                                    console.log("JSON: ", respostaJSON) // respostaJSON é um objeto JS (usa ,)
+                                    console.log('Logradouro: ' + respostaJSON.logradouro) // respostaJSON.logradouro é um texto (usa +)
+                                    div_mensagem.innerHTML = `
+                                    CEP: ${respostaJSON.cep} <br>
+                                    Logradouro: ${respostaJSON.logradouro}
+                                    `;//precisa chamar cada informaçao f=por vez   
+                                    input_logradouro.value = respostaJSON.logradouro;     
+                                }
+                            ) 
+                        }
+                    ) 
+                    .catch( // quando da erro no request (quqlquer erro do http)
+                        function (erro) {
+                            console.log('DEU ERRO!')
+                            console.log("Erro: ", erro)
+                        }
+                    );
+            }
+        
+    }
+</script>
